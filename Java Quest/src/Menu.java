@@ -7,6 +7,8 @@ import java.io.IOException;
 
 public class Menu extends JFrame{
     private JPanel panel1;
+    private JLabel portada_1;
+    private JLabel portada_2;
 
     private final File fondo;
     private Clip clip;
@@ -41,7 +43,7 @@ public class Menu extends JFrame{
     public class Fondo extends JPanel{
         @Override
         public  void paint(Graphics g){
-            Image fondo = new ImageIcon(getClass().getResource("Multimedia/Fondos/fondo_1.jpg")).getImage();
+            Image fondo = new ImageIcon(getClass().getResource("Multimedia/Fondos/fondo_2.gif")).getImage();
             g.drawImage(fondo, 0,0, getWidth(), getHeight(), this);
             setOpaque(false);
             super.paint(g);
