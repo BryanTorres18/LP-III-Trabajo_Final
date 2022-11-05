@@ -1,14 +1,21 @@
 import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
 
 public class Menu extends JFrame{
-    private JPanel panel1;
-    private JLabel portada_1;
-    private JLabel portada_2;
+    private JPanel Principal;
+    private JPanel Botones;
+    private JPanel ImagenesLogo;
+    private JPanel Logo;
+    private JPanel Cachimbo;
+    private JButton jugarButton;
+    private JButton scoreboardButton;
+    private JButton salirButton;
 
     private final File fondo;
     private Clip clip;
@@ -19,14 +26,13 @@ public class Menu extends JFrame{
     public Menu(){
         setTitle("Agenda");
         setContentPane(fondo_menu);
-        add(panel1);
-        setSize(600,800);
+        add(Principal);
+        setSize(800,600);
         setVisible(true);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fondo = new File("src/Multimedia/Musica/fondo_musica_1.wav");
         play();
-
     }
     public void play(){
         try {
