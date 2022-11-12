@@ -16,5 +16,19 @@ public class Enemigo extends Personaje{
         this.PreguntasEnemigos = preguntas;
         this.Frases = Frases;
     }
+    public  void enviarDanio(Personaje obj){
+        obj.recibirDanio(this.danio);
+    }
 
+    public  void recibirDanio(int num){
+        this.numCorazones -= num;
+        this.validarVidaRestante();
+    }
+    public  boolean validarVidaRestante(){
+        if (numCorazones <= 0){
+            vivo = false;
+            return false;
+        }
+        return true;
+    }
 }

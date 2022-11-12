@@ -2,7 +2,6 @@ package clasesPersonajes;
 
 
 public abstract class Personaje implements MetodosCombate {
-
     String nombre;
     int numCorazones;
     int danio;
@@ -19,20 +18,8 @@ public abstract class Personaje implements MetodosCombate {
         this.danio = Danio;
         this.vivo = true;
     }
+    public abstract void enviarDanio(Personaje obj);
 
-    public void enviarDanio(Personaje obj){
-        obj.recibirDanio(this.danio);
-    }
-
-    public void recibirDanio(int num){
-        this.numCorazones -= num;
-        this.validarVidaRestante();
-    }
-    public boolean validarVidaRestante(){
-        if (numCorazones <= 0){
-            vivo = false;
-            return false;
-        }
-        return true;
-    }
+    public abstract void recibirDanio(int num);
+    public abstract boolean validarVidaRestante();
 }

@@ -33,5 +33,19 @@ public class PersonajePrincipal extends Personaje{
         return this.corazonesExtra;
     }
 
+    public  void enviarDanio(Personaje obj){
+        obj.recibirDanio(this.danio);
+    }
 
+    public  void recibirDanio(int num){
+        this.numCorazones -= num;
+        this.validarVidaRestante();
+    }
+    public  boolean validarVidaRestante(){
+        if (numCorazones <= 0){
+            vivo = false;
+            return false;
+        }
+        return true;
+    }
 }
